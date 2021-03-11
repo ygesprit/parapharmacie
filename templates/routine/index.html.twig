@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello RoutineController!{% endblock %}
+
+{% block content %}
+    <div>
+        <div class="table-responsive col-md-6">
+            <table class="table table-bordered" border="1">
+                <thead class="thead-dark">
+                <tr>
+                    <th>productName</th>
+                    <th>skinType</th>
+                    <th>price</th>
+                    <th>timeUse</th>
+                    <th>Action</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr {% for p in products %}>
+                    <td>{{ p.nameProduct }}</td>
+                    <td>{{ p.skinType }}</td>
+                    <td>{{ p.price }}</td>
+                    <td>{{ p.timeUse }}</td>
+
+                    <td><div class="btn dropdown">
+                            <a href="#" class="nav-link dropdown-toggle active" data-toggle="dropdown">Ajouter à ma routine</a>
+                            <div class="dropdown-menu">
+                                {% for r in routines %}
+                                   <a href="{{ path('addprodrout',{'idr':r.id,'idp':p.id}) }}" >{{ r.nameRoutine }}</a><br>
+                                {% endfor %}
+                            </div>
+                        </div><td>
+
+
+
+
+                </tr {% endfor %}>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <!-- -->
+
+{% endblock %}

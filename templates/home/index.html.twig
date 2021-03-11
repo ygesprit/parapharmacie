@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello HomeController!{% endblock %}
+
+{% block content %}
+
+    {% for article in articles %}
+        <div class="">
+        <div class="review">
+        <div class="container-fluid">
+            <div class="row align-items-center review-slider normal-slider">
+                <div class="">
+                    <a class="review-slider-item">
+                        <div class="review-img">
+                            <img src="{{ article.image }}" alt="image-article">
+                        </div>
+                        <div class="review-text">
+                            <h2>{{ article.title }}</h2>
+                            <h3>{{ article.createdAt|date("m/d/Y")  }}</h3>
+
+                            <p>
+                                {{ article.description|slice(0,50) }}
+                            </p>
+                        </div>
+                        <a href="{{ path('article_show',{'id':article.id}) }}" ><button class="btn">Lire l'article</button></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+        </div>
+    {% endfor %}
+{% endblock %}
+
+

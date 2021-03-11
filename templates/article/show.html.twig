@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {{ article.title }}
+{% endblock %}
+
+{% block content %}
+ <div class="cart-page">
+ <div class="container-fluid" >
+     <div class="row">
+         <div class="col-lg-8">
+             <div class="cart-page">
+
+        <h1>{{ article.title }}</h1>
+        <p>
+            {{ article.description }}
+        </p>
+
+        <figure>
+            <img src="{{ article.image }}" alt="photo" style="max-width: 60%">
+        </figure>
+        <small class="text-muted">Date de publication : {{ article.createdAt|date("d/m/Y") }}</small>
+
+    </div>
+     </div>
+     </div>
+ </div>
+ </div>
+{% endblock %}

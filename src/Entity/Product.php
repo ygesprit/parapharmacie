@@ -69,6 +69,7 @@ class Product
      */
     private $orderLines;
 
+
     /**
      * @ORM\ManyToMany(targetEntity=Routine::class, mappedBy="products")
      */

@@ -1,0 +1,23 @@
+{% extends 'base2.html.twig' %}
+
+{% block title %}Articles{% endblock %}
+
+{% block content %}
+
+    <section id="main-content">
+    <section class="wrapper">
+
+<h1>AJouter un article </h1>
+
+{{ form_start(form) }}
+
+    {{ include('article/_form.html.twig') }}
+<button class="btn btn-primary">
+    Ajouter
+</button>
+{{ form_end(form) }}
+
+    </section>
+    </section>
+
+{% endblock %}

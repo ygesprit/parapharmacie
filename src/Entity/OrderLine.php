@@ -7,11 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity(repositoryClass=OrderLineRepository::class)
- * @ORM\Table(name="OrderLine",
-uniqueConstraints={
-@ORM\UniqueConstraint(name="product_order_unique", columns={"product_id", "orderr_id"})
-}
-)
+ * @ORM\Table(name="OrderLine", uniqueConstraints={@ORM\UniqueConstraint(name="product_order_unique", columns={"product_id", "orderr_id"})})
  */
 class OrderLine
 {

@@ -25,7 +25,7 @@ class Routine
     private $nameRoutine;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $notification;
 
@@ -39,9 +39,12 @@ class Routine
      */
     private $user;
 
+
+
     public function __construct()
     {
         $this->products = new ArrayCollection();
+
     }
 
     public function getId(): ?int
@@ -108,4 +111,6 @@ class Routine
 
         return $this;
     }
+
+
 }
